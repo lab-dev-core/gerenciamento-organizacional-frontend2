@@ -47,7 +47,7 @@ export default function Login() {
         name: response.name,
         role: response.role,
       });
-      navigate("/dashboard");
+      navigate("/Home");
     } catch (err) {
       setError("Credenciais inválidas. Por favor, tente novamente.")
     } finally {

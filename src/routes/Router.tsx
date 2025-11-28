@@ -3,9 +3,9 @@ import { type ReactElement } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
+import { isAuthenticated } from "@/api/auth";
 
-// Simula autenticação
-const isAuthenticated = () => !!localStorage.getItem("token");
+
 
 // Define as rotas em um array de objetos
 type AppRoute = {
