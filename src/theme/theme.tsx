@@ -4,10 +4,8 @@ export const theme = createTheme({
   cursorType: "pointer",
   defaultRadius: "md",
 
-  // define o nome da cor principal
   primaryColor: "primary",
 
-  // registra a paleta
   colors: {
     primary: [
       "#e3e7f2",
@@ -17,7 +15,7 @@ export const theme = createTheme({
       "#7181be",
       "#5568b1",
       "#3a4f94",
-      "#1d2d5c", // tom principal
+      "#1d2d5c",
       "#18264a",
       "#121d38",
     ],
@@ -47,6 +45,14 @@ export const theme = createTheme({
     NativeSelect: { defaultProps: { radius: "sm" } },
     Select: { defaultProps: { radius: "sm" } },
     ActionIcon: { defaultProps: { radius: "sm" } },
-    NavLink: { defaultProps: { radius: "8" } },
+
+    NavLink: {
+      defaultProps: { radius: "md" },
+      styles: (theme: any, props: any) => ({
+        root: {
+          borderRadius: theme.radius[props.radius || "md"],
+        },
+      }),
+    },
   },
 });
