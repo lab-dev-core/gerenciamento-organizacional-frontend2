@@ -6,6 +6,9 @@ import { isAuthenticated } from "@/api/auth";
 import AppLayout from "@/layouts/AppLayout";
 import type { ReactNode } from "react";
 import Users from "@/pages/Users";
+import Stages from "@/pages/Stages";
+import Roles from "@/pages/Roles";
+import Locations from "@/pages/Locations";
 
 function Private({ children }: { children: ReactNode }) {
   return isAuthenticated() ? <>{children}</> : <Navigate to="/login" replace />;
@@ -28,6 +31,9 @@ export default function AppRouter() {
           {/* páginas dentro do layout */}
           <Route index element={<Dashboard />} />
           <Route path="users" element={<Users />} />
+          <Route path="stages" element={<Stages />} />
+          <Route path="roles" element={<Roles />} />
+          <Route path="locations" element={<Locations />} />
         </Route>
 
         {/* ROTAS PÚBLICAS */}
